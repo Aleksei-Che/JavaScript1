@@ -120,3 +120,13 @@ const postiuNegatiuZero = (num) => {
     let respuesta = parOInpar();
 
     respuesta.forEach(result => console.log(result));
+    
+    // Exercici 1.3: Callbacks
+
+     // Exercici 1
+
+    const processar = (23, callbck) => {
+        callback (23);
+    }
+
+
