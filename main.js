@@ -125,8 +125,15 @@ const postiuNegatiuZero = (num) => {
 
      // Exercici 1
 
-    const processar = (23, callbck) => {
-        callback (23);
+    const processar = (num, callback) => {
+        callback (num);
     }
+
+    const mostrarNum = (num) => {
+
+        console.log(`El número és ${num}`);
+    }
+
+    processar(23, mostrarNum);
 
 
