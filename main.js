@@ -302,4 +302,71 @@ const newObj = {...obj1, ...obj2};
 
 console.log(newObj);
 
+// Exercici 1.5: Array transformations
 
+// Nivell 1
+// Exercici 1
+// Map: Teniu un array de números [1, 2, 3, 4]. Crea una nova array que contingui el quadrat de cada número.
+
+const arrNum = [1, 2, 3, 4];
+
+let arrQuadrat = arrNum.map(item => item**2);
+console.log(arrQuadrat);
+
+// Exercici 2
+// Filter: Teniu una array de números [1, 2, 3, 4]. Crea una nova array que només contingui els números parells.
+
+const arrNum2 = [1, 2, 3, 4];
+
+let numParells = arrNum2.filter(item => item%2 === 0);
+console.log(numParells);
+
+
+// Exercici 3
+// Find: Teniu una array de números [1, 10 , 8, 11]. Utilitza la funció find per a trobar el primer número que és major a 10.
+
+const arrNum3 = [1, 10 , 8, 11];
+
+let majorDeu = arrNum3.find(item => item > 10);
+console.log(majorDeu);
+
+// Exercici 4
+// Reduce: Teniu una array de números [13, 7, 8, 21]. Fes servir la funció reduce per a calcular la suma total dels números.
+
+const arrNum4 = [13, 7, 8, 21];
+
+let sumaTotal = arrNum4.reduce((acc, num) => acc + num, 0);
+console.log(sumaTotal);
+
+
+// Nivell 2
+
+
+// Exercici 5
+// Donat un array "[ 1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9 ]", crea una funció en una sola línia que faci el següent:
+
+// - Filtra els nombres majors o iguals a 10.
+
+// - Multiplica cada nombre filtrat per 2.
+
+// - Calcula la suma dels nombres filtrats i multiplicats per 2.
+
+// - La funció ha de retornar el resultat de la suma.
+
+const arrNum5 = [ 1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9 ];
+
+const metodosArr = arrNum5.filter(item => item >= 10).map(item => item*2).reduce((acc, item) => acc + item, 0);
+console.log(metodosArr);
+
+// Nivell 3
+// Exercici 6
+// Every / Some: Usa every i some per a determinar si tots o alguns dels elements de l'array [11, 12, 13, 14] són majors que 10, respectivament
+
+
+const arrNum6 = [11, 12, 13, 14];
+
+const totsMajorsQueDeu = arrNum6.every(num => num > 10);
+console.log(totsMajorsQueDeu); 
+
+const algunMajorQueDeu = arrNum6.some(num => num > 10);
+console.log(algunMajorQueDeu);
