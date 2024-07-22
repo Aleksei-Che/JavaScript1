@@ -218,4 +218,88 @@ let cadena = "bon dia, com va?";
 
 processarCadena(cadena, mostrarCadena);
 
+// Exercici 1.4: Rest & Spread operators
+
+// Nivell 1
+
+
+// Exercici 1
+// Operador Spread en Arrays: Crea dues arrays, array1 i array2. Utilitza l'operador spread per a crear una tercera array que contingui tots els elements de array1 i array2.
+
+let array1 = [23, 45, 66, 11];
+let array2 = ['a', 'b', 'c'];
+let array3 = [...array1, ...array2];
+
+console.log(array3);
+
+// Exercici 2
+// Operador Rest en Funcions: Crea una funció 'suma' que utilitzi l'operador rest per a acceptar un nombre indeterminat d'arguments i retornar la seva suma.
+
+const suma1 = (...nombres) => {
+   return nombres.reduce((acc, num) => acc + num, 0);
+}
+
+console.log(suma1(100, 1, 2, 3));
+
+// Nivell 2
+// Exercici 3
+// Copiant objectes amb Spread: Crea un objecte 'objecte1'. Després crea un segon objecte, 'objecte2', que sigui una còpia de 'objecte1' utilitzant l'operador spread. Canvia una propietat de 'objecte2' i comprova que 'objecte1' no ha canviat.
+
+const objecte1 = {
+    nom: "Barcelona",
+    poblacio: 1700000,
+    regio: "Catalunya"
+} 
+
+const objecte2 = {...objecte1};
+objecte2.poblacio = 1620000;
+
+console.log(objecte1);
+console.log(objecte2);
+
+// Exercici 4
+// Rest en Destructuring: Crea una array amb diversos elements. Utilitza destructuring i l'operador rest per a assignar els primers dos elements a variables, i després assignar la resta dels elements a una tercera variable.
+
+const elements = ['blau', 'vermell', 'verd', 'blanc', 'negre'];
+
+const [primer, segon, ...resta] = elements;
+
+console.log(primer); // 'blau'
+console.log(segon);  // 'vermell'
+console.log(resta);  // ['verd', 'blanc', 'negre']
+
+
+// Nivell 3
+// Exercici 5
+// Spread en Funcions: Crea una funció que accepti tres arguments. Després, crea una array amb tres elements i crida la funció utilitzant l'operador spread amb aquesta array.
+
+const tresArg = (arg1, arg2, arg3) => {
+    console.log(`Arg1: ${arg1}`);
+    console.log(`Arg2: ${arg2}`);
+    console.log(`Arg3: ${arg3}`);
+
+}
+
+const tresElem = ["Manresa", "Terrassa", "Sabadell"];
+
+tresArg(...tresElem);
+
+
+// Exercici 6
+// Fusionant Objectes amb Spread: Crea dos objectes amb propietats diferents. Utilitza l'operador spread per a fusionar aquests dos objectes en un de nou.
+
+const obj1 = {
+    nom: "Joan Miro",
+    anys: "1893 - 1983",
+}
+
+const obj2 = {
+    ofici: "pintor",
+    moviment: "surrealisme",
+}
+
+const newObj = {...obj1, ...obj2};
+
+console.log(newObj);
+
 
