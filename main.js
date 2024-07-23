@@ -1,42 +1,42 @@
 
-    // Exercici 1.1: Arrow functions
-    
-    // Exercici 1
-    let a = 4;
-    let b = 5;
+// Exercici 1.1: Arrow functions
 
-    const add = (a, b) => a + b;
+// Exercici 1
+let a = 4;
+let b = 5;
 
-    console.log("Exercici 1", add(a, b));
+const add = (a, b) => a + b;
 
-    let n = 101;
+console.log("Exercici 1", add(a, b));
 
-    // Exercici 2
-    const randomNumber = (n) => Math.floor(Math.random() * n);
+let n = 101;
 
-    console.log("Exercici 2", randomNumber(n));
+// Exercici 2
+const randomNumber = (n) => Math.floor(Math.random() * n);
+
+console.log("Exercici 2", randomNumber(n));
 
 
-    // Exercici 3
-    class Person{
-        constructor(nombre){
-            this.nombre = nombre;
-        }
-
-        greet(){
-            return `Hola, ${this.nombre}`
-        }
+// Exercici 3
+class Person {
+    constructor(nombre) {
+        this.nombre = nombre;
     }
 
-    let nom = "Ivan";
+    greet() {
+        return `Hola, ${this.nombre}`
+    }
+}
 
-    let person = new Person(nom);
+let nom = "Ivan";
 
-    let resultado = person.greet();
+let person = new Person(nom);
 
-    console.log("Exercici 3:", resultado);
+let resultado = person.greet();
 
-    // Exercici 4
+console.log("Exercici 3:", resultado);
+
+// Exercici 4
 
 const arr = [1, 89, 45, 4, 8, 6];
 
@@ -52,7 +52,7 @@ printNumbers(arr);
 // Exercici 5
 function mensaje() {
     console.log("Com va això?");
-} 
+}
 
 const mensajeDelay = () => setTimeout(mensaje, 3000);
 
@@ -73,68 +73,68 @@ console.log(potConduir);
 let num1 = 34;
 let num2 = 67;
 
-const result = (num1 > num2)? `Num1 ${num1} és més gran` : `Num2 ${num2} és més gran`;
+const result = (num1 > num2) ? `Num1 ${num1} és més gran` : `Num2 ${num2} és més gran`;
 console.log(result);
 
 // Exercici 3
 
 const postiuNegatiuZero = (num) => {
-        return (num === 0) ? `Número 0` : (num > 0)? `Positiu` : `Negatiu`;
+    return (num === 0) ? `Número 0` : (num > 0) ? `Positiu` : `Negatiu`;
+}
+
+let num = 0;
+console.log(postiuNegatiuZero(num));
+
+
+const trobarMaxim = (a1, b1, c1) => {
+
+    return (a1 > b1 && a1 > c1) ? `Número a té el valor màxim` : (b1 > c1) ? `Número b té el valor màxim` : `Número c té el valor màxim`;
+
+}
+
+let a1 = 5;
+let b1 = 2;
+let c1 = 3;
+
+let result2 = trobarMaxim(a1, b1, c1);
+
+console.log(result2);
+
+// Exercici 4
+
+const arr1 = [23, 44, 55, 66, 77, 88]
+
+const parOInpar = () => {
+
+    let resultados = [];
+    for (let i = 0; i < arr1.length; i++) {
+
+        let number1 = arr1[i];
+        let numVerificar = number1 % 2;
+        let result = (numVerificar === 0) ? `El número ${arr1[i]} és par` : `El número ${arr1[i]} és inpar`;
+
+        resultados.push(result);
     }
+    return resultados;
+}
+let respuesta = parOInpar();
 
-    let num = 0;
-    console.log(postiuNegatiuZero(num));
+respuesta.forEach(result => console.log(result));
 
+// Exercici 1.3: Callbacks
 
-    const trobarMaxim = (a1, b1, c1) => {
+// Exercici 1
 
-        return (a1 > b1 && a1 >c1) ? `Número a té el valor màxim` : (b1 > c1) ? `Número b té el valor màxim` : `Número c té el valor màxim`;
+const processar = (num, callback) => {
+    callback(num);
+}
 
-    }
+const mostrarNum = (num) => {
 
-    let a1 = 5;
-    let b1 = 2;
-    let c1 = 3;
+    console.log(`El número és ${num}`);
+}
 
-    let result2 = trobarMaxim(a1, b1, c1);
-
-    console.log(result2);
- 
-    // Exercici 4
-
-    const arr1 = [23, 44, 55, 66, 77, 88]
-    
-    const parOInpar = () => {
-
-        let resultados = [];
-        for (let i = 0; i<arr1.length; i++) {
-
-            let number1 = arr1[i];
-            let numVerificar = number1 % 2;
-            let result = (numVerificar === 0) ? `El número ${arr1[i]} és par` : `El número ${arr1[i]} és inpar`;
-
-            resultados.push(result);
-            }
-            return resultados;
-        }
-    let respuesta = parOInpar();
-
-    respuesta.forEach(result => console.log(result));
-    
-    // Exercici 1.3: Callbacks
-
-     // Exercici 1
-
-    const processar = (num, callback) => {
-        callback (num);
-    }
-
-    const mostrarNum = (num) => {
-
-        console.log(`El número és ${num}`);
-    }
-
-    processar(23, mostrarNum);
+processar(23, mostrarNum);
 
 
 //    Exercici 2
@@ -143,16 +143,16 @@ const postiuNegatiuZero = (num) => {
 const calculadora = (num1, num2, callback) => {
 
     return callback(num1, num2);
-    
-    }
 
-    const suma = (a, b) => {
-        return a + b;
-    }
+}
 
-    let total = calculadora(4, 9, suma);
+const suma = (a, b) => {
+    return a + b;
+}
 
-    console.log("El resultat de la suma és: ", total);
+let total = calculadora(4, 9, suma);
+
+console.log("El resultat de la suma és: ", total);
 
 
 
@@ -165,16 +165,16 @@ const calculadora = (num1, num2, callback) => {
 
 async function esperarISaludar() {
 
-    let promise = new Promise ((resolve, reject) => {
+    let promise = new Promise((resolve, reject) => {
 
-        setTimeout(() => resolve ("Jaume"), 2000 );
+        setTimeout(() => resolve("Jaume"), 2000);
     });
 
     let result = await promise;
 
     console.log(result);
-}       
- 
+}
+
 esperarISaludar();
 
 
@@ -202,11 +202,11 @@ processarElements(arr3, multiplicarPerTres)
 
 // Escriu una funció processarCadena que accepti dos paràmetres: una cadena de caràcters i una funció de callback. La funció processarCadena ha de convertir la cadena a majúscules i llavors invocar la funció de callback amb la cadena transformada.
 
-const processarCadena =(cadena, fncallback)=>{
+const processarCadena = (cadena, fncallback) => {
 
-   let cadenaMajusc = cadena.toUpperCase();
+    let cadenaMajusc = cadena.toUpperCase();
 
-   fncallback(cadenaMajusc);
+    fncallback(cadenaMajusc);
 }
 
 let mostrarCadena = (cadena) => {
@@ -236,7 +236,7 @@ console.log(array3);
 // Operador Rest en Funcions: Crea una funció 'suma' que utilitzi l'operador rest per a acceptar un nombre indeterminat d'arguments i retornar la seva suma.
 
 const suma1 = (...nombres) => {
-   return nombres.reduce((acc, num) => acc + num, 0);
+    return nombres.reduce((acc, num) => acc + num, 0);
 }
 
 console.log(suma1(100, 1, 2, 3));
@@ -249,9 +249,9 @@ const objecte1 = {
     nom: "Barcelona",
     poblacio: 1700000,
     regio: "Catalunya"
-} 
+}
 
-const objecte2 = {...objecte1};
+const objecte2 = { ...objecte1 };
 objecte2.poblacio = 1620000;
 
 console.log(objecte1);
@@ -298,7 +298,7 @@ const obj2 = {
     moviment: "surrealisme",
 }
 
-const newObj = {...obj1, ...obj2};
+const newObj = { ...obj1, ...obj2 };
 
 console.log(newObj);
 
@@ -310,7 +310,7 @@ console.log(newObj);
 
 const arrNum = [1, 2, 3, 4];
 
-let arrQuadrat = arrNum.map(item => item**2);
+let arrQuadrat = arrNum.map(item => item ** 2);
 console.log(arrQuadrat);
 
 // Exercici 2
@@ -318,14 +318,14 @@ console.log(arrQuadrat);
 
 const arrNum2 = [1, 2, 3, 4];
 
-let numParells = arrNum2.filter(item => item%2 === 0);
+let numParells = arrNum2.filter(item => item % 2 === 0);
 console.log(numParells);
 
 
 // Exercici 3
 // Find: Teniu una array de números [1, 10 , 8, 11]. Utilitza la funció find per a trobar el primer número que és major a 10.
 
-const arrNum3 = [1, 10 , 8, 11];
+const arrNum3 = [1, 10, 8, 11];
 
 let majorDeu = arrNum3.find(item => item > 10);
 console.log(majorDeu);
@@ -353,9 +353,9 @@ console.log(sumaTotal);
 
 // - La funció ha de retornar el resultat de la suma.
 
-const arrNum5 = [ 1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9 ];
+const arrNum5 = [1, 3, 7, 10, 15, 17, 11, 5, 8, 12, 9];
 
-const metodosArr = arrNum5.filter(item => item >= 10).map(item => item*2).reduce((acc, item) => acc + item, 0);
+const metodosArr = arrNum5.filter(item => item >= 10).map(item => item * 2).reduce((acc, item) => acc + item, 0);
 console.log(metodosArr);
 
 // Nivell 3
@@ -366,7 +366,7 @@ console.log(metodosArr);
 const arrNum6 = [11, 12, 13, 14];
 
 const totsMajorsQueDeu = arrNum6.every(num => num > 10);
-console.log(totsMajorsQueDeu); 
+console.log(totsMajorsQueDeu);
 
 const algunMajorQueDeu = arrNum6.some(num => num > 10);
 console.log(algunMajorQueDeu);
@@ -387,7 +387,7 @@ noms.forEach(nom => console.log(nom));
 
 let nomsForOf = ['Anna', 'Bernat', 'Clara'];
 
-for (let nom of nomsForOf){
+for (let nom of nomsForOf) {
 
     console.log(nom);
 }
@@ -407,9 +407,9 @@ console.log(arrDeParells);
 // Exercici 4
 // for-in: Teniu un objecte amb parells clau-valor: let obj = { nom: Ona, edat: 25, ciutat: 'Barcelona' }; Utilitza un bucle for-in per a imprimir a la consola cada clau i el seu valor corresponent.
 
-let objForIn = { nom: "Ona", edat: 25, ciutat: "Barcelona"};
+let objForIn = { nom: "Ona", edat: 25, ciutat: "Barcelona" };
 
-for (let clau in objForIn){
+for (let clau in objForIn) {
 
     console.log(`${clau}: ${objForIn[clau]}`);
 }
@@ -420,7 +420,7 @@ let numeros = [1, 2, 3, 4, 5, 6];
 
 for (let num of numeros) {
     if (num === 5) {
-        break; 
+        break;
     }
     console.log(num);
 }
@@ -445,8 +445,8 @@ for (let [index, nom] of nomsPerIndex.entries()) {
 // Exercici 2
 // Utilització d'una Promesa: Utilitza la promesa creada en l'exercici anterior. Crea un .then que imprimeixi el resultat a la consola.
 
-const promesa = new Promise((resolve, reject) =>{
-    setTimeout(() =>{
+const promesa = new Promise((resolve, reject) => {
+    setTimeout(() => {
         resolve("Hola, mon");
     }, 2000);
 })
@@ -464,12 +464,12 @@ promesa.then(result => {
 
 const promessa1 = (input) => {
     return new Promise((resolve, reject) => {
-        setTimeout (() =>{
-            if (input === "Hola"){
-                resolve ("Hola");
+        setTimeout(() => {
+            if (input === "Hola") {
+                resolve("Hola");
             } else {
 
-                reject ("Error");
+                reject("Error");
             }
         });
     })
@@ -489,27 +489,27 @@ promessa1("Hola").then(result => {
 // Gestió d'errors amb async/await: Modifica la funció de l'exercici 4 per a que capturi qualsevol possible error utilitzant un bloc try/catch.
 
 
-const promessa2 = (input) =>{
+const promessa2 = (input) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (input === "Hola"){
-                resolve ("Hola");
+            if (input === "Hola") {
+                resolve("Hola");
             } else {
-                reject ("Error");
+                reject("Error");
             }
         }, 2000);
     });
 }
 
-async function fn (input) {
+async function fn(input) {
     try {
-        let result = await promessa2 (input);
+        let result = await promessa2(input);
         console.log(result);
-    } catch (error){
-        console.log (error);
+    } catch (error) {
+        console.log(error);
     }
 }
-fn ("Hola");
+fn("Hola");
 fn("Adéu")
 
 
